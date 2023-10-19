@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  height: 100vh;
+  background: no-repeat center url("hero-bg.jpg");
+  background-size: cover;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.container {
+  width: calc(min(1200px, 90vw));
+  margin-inline: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.navbar a{
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #C06B3E;
+}
+
+.logo {
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+
+.logo span {
+  color: #C06B3E;
+}
+
+.menu-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.hero-section {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+.hero-section p {
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 10px 30px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: #C06B3E;
+  color: #fff;
+}
+
+.btn:active {
+  scale: 0.98;
+}
+
+#menu-btn, #close-menu-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width:900px) {
+  .menu-links {
+    position: fixed;
+    left: -110%;
+    top: 0;
+    height: 100vh;
+    width: min(100vw, 300px);
+    padding-top: 70px;
+    background: #fff;
+    color: #000;
+    flex-direction: column;
+    transition: left .4s ease;
+  }
+
+  .show-mobile-menu::before {
+    position: fixed;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+  }
+
+  .show-mobile-menu .menu-links {
+    left: 0;
+  }
+
+  .menu-links li {
+    /* color: #000; */
+    margin: 0 auto;
+  }
+
+  .menu-links a {
+    color: #000;
+  }
+
+  .content {
+    text-align: center;
+    width: 100%;
+  }
+
+  #menu-btn, #close-menu-btn {
+    display: block;
+  }
+
+  #close-menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 10%;
+    color: #000;
+  }
+}
